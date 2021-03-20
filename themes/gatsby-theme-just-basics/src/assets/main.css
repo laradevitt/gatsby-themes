@@ -1,0 +1,16 @@
+.menu * {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Minimal main menu styles: show top level only. */
+
+.menu.main nav > ul ul {
+  display: none;
+}
+
+.menu.main > nav > ul > li {
+  display: inline-block;
+  padding-right: 1rem;
+}

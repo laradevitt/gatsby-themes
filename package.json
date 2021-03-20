@@ -1,0 +1,14 @@
+{
+  "name": "gatsby-themes",
+  "private": true,
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "npm:update": "find . -type f -name 'package.json' -not -path './.git/*' -not -path '*/node_modules/*' -execdir npx npm-check-updates --upgrade ;"
+  },
+  "workspaces": [
+    "sites/*",
+    "themes/*"
+  ]
+}

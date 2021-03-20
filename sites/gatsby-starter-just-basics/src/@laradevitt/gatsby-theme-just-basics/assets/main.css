@@ -1,0 +1,91 @@
+/* Layout */
+
+body {
+  margin: 0;
+}
+
+#gatsby-focus-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#gatsby-focus-wrapper > header,
+#gatsby-focus-wrapper > footer {
+  height: 50px;
+  background: #adb5bd;
+  padding: 1rem;
+}
+
+#gatsby-focus-wrapper > main {
+  flex: 1;
+  display: flex;
+}
+
+#gatsby-focus-wrapper > main > div {
+  padding: 1rem;
+}
+
+#gatsby-focus-wrapper > main > div:first-child {
+  background: #dee2e6;
+  flex:1;
+}
+
+#gatsby-focus-wrapper > main > div:last-child {
+  flex: 4;
+  background: #f8f9fa;
+}
+
+.menu * {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Minimal main menu styles: show top level only. */
+
+.menu.main > ul ul {
+  display: none;
+}
+
+.menu.main > ul > li {
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+/* Minimal submenu styles: show active menu. */
+
+.menu.sub > ul li,
+.menu.sub > ul > li > a {
+  display: none;
+}
+
+.menu.sub > ul li.active-menu,
+.menu.sub > ul li.active-menu li {
+  display: block;
+}
+
+/* Minimal breadcrumb styles: show active trail. */
+
+.menu.breadcrumb > ul a {
+  display: none;
+}
+
+.menu.breadcrumb > ul a.active,
+.menu.breadcrumb > ul a.active + ul {
+  display: inline-block;
+}
+
+.menu.breadcrumb > ul a.active::before {
+  padding: 0 .5rem;
+  content: '\00BB';
+}
+
+.menu.breadcrumb > ul > li > a.active::before {
+  padding: 0;
+  content: '';
+}
+
+.menu.breadcrumb > ul a[aria-current="page"] {
+  display: none; /* Unset to include current page. */
+}
