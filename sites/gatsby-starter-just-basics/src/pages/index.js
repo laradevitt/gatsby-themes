@@ -8,10 +8,10 @@ const Homepage = ({ location }) => {
   return (
     <Layout location={location}>
       <div>
-        <Menu wrapperClass="menu sub" location={location} />
+        <Menu wrapperClass="menu sub" activePath={location.pathname} />
       </div>
       <div>
-        <Menu wrapperClass="menu breadcrumb" location={location} />
+        <Menu wrapperClass="menu breadcrumb" activePath={location.pathname} />
         <h1>Welcome</h1>
         <StaticImage
           src="../images/timo-volz-ZlFKIG6dApg-unsplash.jpg"

@@ -80,7 +80,9 @@ module.exports = {
 
 The `Menu` component outputs a hierarchical list-style menu based on the settings in `menuLinks`. It sets `active` class for active item and `active-trail` class for active trail. It doesn't do anything special beyond that. Use `wrapperClass` to pass classes to the `<nav>` element.
 
-You can use the `Menu` component anywhere; just make sure to pass in `location`. It needs this info to set active item and active trail.
+The `activePath` property is required. You can use the `location` object, a dynamically generated path (such as in a template file), or any old path.
+
+Example:
 
 ```js
 import Menu from '@laradevitt/gatsby-theme-just-basics/src/components/Menu';
@@ -88,8 +90,21 @@ import Menu from '@laradevitt/gatsby-theme-just-basics/src/components/Menu';
 export default ({ location }) => {
   return (
     <Layout location={location}>
-      <Menu wrapperClass="menu breadcrumb" location={location} />
+      <Menu
+        wrapperClass="menu main"
+        activePath={location.pathname}
+      />
     </Layout>
   );
 };
 ```
+
+Example using a dynamically generated path:
+
+```js
+<Menu
+  wrapperClass="menu breadcrumb"
+  activePath={`/shop/${product.handle}`}
+/>
+```
+

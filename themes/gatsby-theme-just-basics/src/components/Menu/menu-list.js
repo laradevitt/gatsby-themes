@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
-const MenuList = (props) => {
-  const { items, location } = props;
+const MenuList = ({ items, activePath }) => {
 
   let menuClasses = '';
   if (items[0]) {
@@ -26,7 +25,7 @@ const MenuList = (props) => {
           </Link>
           {item.childNodes
             && (
-            <MenuList location={location} items={item.childNodes} />
+            <MenuList activePath={activePath} items={item.childNodes} />
           )}
         </li>
       ))}
@@ -36,7 +35,7 @@ const MenuList = (props) => {
 
 MenuList.propTypes = {
   items: PropTypes.array.isRequired,
-  location: PropTypes.object.isRequired,
+  activePath: PropTypes.string.isRequired,
 };
 
 export default MenuList;

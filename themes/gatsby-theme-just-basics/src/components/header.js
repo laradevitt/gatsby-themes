@@ -4,7 +4,7 @@ import Menu from './Menu';
 
 const Header = ({ location }) => (
   <header>
-    <Menu wrapperClass="main menu" location={location} />
+    <Menu wrapperClass="main menu" activePath={location.pathname} />
   </header>
 );
 

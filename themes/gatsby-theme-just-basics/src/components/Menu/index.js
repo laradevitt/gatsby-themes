@@ -5,7 +5,7 @@ import MenuList from './menu-list';
 
 import createDataTree from '../../utils/createDataTree';
 
-const Menu = ({ wrapperClass, location }) => (
+const Menu = ({ activePath, wrapperClass }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -31,11 +31,11 @@ const Menu = ({ wrapperClass, location }) => (
     `}
     render={(data) => {
       const { edges } = data.allMenuItem;
-      const menuTree = createDataTree(edges, location.pathname);
+      const menuTree = createDataTree(edges, activePath);
       if (edges.length) {
         return (
           <nav className={wrapperClass}>
-            {<MenuList location={location} items={menuTree} />}
+            {<MenuList activePath={activePath} items={menuTree} />}
           </nav>
         );
       }
@@ -44,10 +44,8 @@ const Menu = ({ wrapperClass, location }) => (
 );
 
 Menu.propTypes = {
+  activePath: PropTypes.string.isRequired,
   wrapperClass: PropTypes.string,
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }),
 };
 
 export default Menu;

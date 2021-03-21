@@ -7,10 +7,10 @@ export default ({ location }) => {
   return (
     <Layout location={location}>
       <div>
-        <Menu wrapperClass="menu sub" location={location} />
+        <Menu wrapperClass="menu sub" activePath={location.pathname} />
       </div>
       <div>
-        <Menu wrapperClass="menu breadcrumb" location={location} />
+        <Menu wrapperClass="menu breadcrumb" activePath={location.pathname} />
         <h1>Contact Me</h1>
         <p>
           Curabitur nec risus at nulla blandit maximus.
