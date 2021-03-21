@@ -1,8 +1,9 @@
-import React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import MenuList from "./menu-list";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
+import MenuList from './menu-list';
 
-import createDataTree from "../../utils/createDataTree";
+import createDataTree from '../../utils/createDataTree';
 
 const Menu = ({ wrapperClass, location }) => (
   <StaticQuery
@@ -41,5 +42,12 @@ const Menu = ({ wrapperClass, location }) => (
     }}
   />
 );
+
+Menu.propTypes = {
+  wrapperClass: PropTypes.string,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }),
+};
 
 export default Menu;

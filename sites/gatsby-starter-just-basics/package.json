@@ -9,7 +9,7 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "gatsby": "^2.32.4",
+    "gatsby": "^3.1.1",
     "@laradevitt/gatsby-theme-just-basics": "^1.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"

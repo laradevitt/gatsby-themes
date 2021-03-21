@@ -1,12 +1,13 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 
 const MenuList = (props) => {
   const { items, location } = props;
 
-  let menuClasses = "";
+  let menuClasses = '';
   if (items[0]) {
-    menuClasses += items[0].node.level ? "level-" + items[0].node.level : "";
+    menuClasses += items[0].node.level ? `level-${items[0].node.level}` : '';
   }
 
   return (
@@ -14,7 +15,7 @@ const MenuList = (props) => {
       {items.map((item) => (
         <li
           key={item.node.uid}
-          className={`${item.node.activeMenu ? "active-menu" : ""}`}
+          className={`${item.node.activeMenu ? 'active-menu' : ''}`}
         >
           <Link
             to={`${item.node.path}/`}
@@ -31,6 +32,11 @@ const MenuList = (props) => {
       ))}
     </ul>
   );
+};
+
+MenuList.propTypes = {
+  items: PropTypes.array.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default MenuList;

@@ -11,7 +11,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `@laradevitt/gatsby-theme-just-basics`,
+      resolve: '@laradevitt/gatsby-theme-just-basics',
       options: {
         menuLinks: [
           {

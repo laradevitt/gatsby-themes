@@ -1,9 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Layout from '@laradevitt/gatsby-theme-just-basics/src/components/layout';
 import Menu from '@laradevitt/gatsby-theme-just-basics/src/components/Menu';
 
-/* eslint-disable-next-line */
-export default ({ location }) => {
+const Footer = ({ location }) => {
   return (
     <Layout location={location}>
       <div>
@@ -13,9 +13,16 @@ export default ({ location }) => {
         <Menu wrapperClass="menu breadcrumb" location={location} />
         <h1>Page Not Found</h1>
         <p>
-          Oops! There doesn't seem to be anything here.
+          Oops! Nothing to see here.
         </p>
       </div>
     </Layout>
   );
 };
+
+Footer.propTypes = {
+  location: PropTypes.object.isRequired,
+};
+
+export default Footer;
+

@@ -1,11 +1,12 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import useSiteMetadata from "../hooks/use-site-metadata";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+import useSiteMetadata from '../hooks/use-site-metadata';
 
-import Header from "./header";
-import Footer from "./footer";
+import Header from './header';
+import Footer from './footer';
 
-import "../assets/main.css";
+import '../assets/main.css';
 
 const Layout = ({ children, location }) => {
   const { title, siteUrl } = useSiteMetadata();
@@ -28,6 +29,13 @@ const Layout = ({ children, location }) => {
       <Footer />
     </>
   )
+};
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }),
 };
 
 export default Layout;

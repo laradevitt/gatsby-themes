@@ -9,7 +9,7 @@ module.exports = (themeOptions) => {
 
   // If we don't define this property we get a WebpackError if there are no
   // options set for the plugin.
-  if (typeof analytics.trackingIds === "undefined" || !analytics.trackingIds) {
+  if (typeof analytics.trackingIds === 'undefined' || !analytics.trackingIds) {
     analytics.trackingIds = [];
   }
 

@@ -1,6 +1,6 @@
-const merge = require("deepmerge");
-const _ = require("lodash");
-const themeDefaults = require("./extra/options-default");
+const merge = require('deepmerge');
+const _ = require('lodash');
+const themeDefaults = require('./extra/options-default');
 
 exports.sourceNodes = (
   { actions: { createNode }, createNodeId, createContentDigest },
@@ -13,11 +13,11 @@ exports.sourceNodes = (
   }
 
   menuLinks.forEach((menuItem) => {
-    menuItem.uid = _.replace(_.trim(menuItem.path, "/"), /\//g, "-");
+    menuItem.uid = _.replace(_.trim(menuItem.path, '/'), /\//g, '-');
     menuItem.parentUid = _.replace(
-      _.trim(menuItem.parentPath, "/"),
+      _.trim(menuItem.parentPath, '/'),
       /\//g,
-      "-"
+      '-'
     );
 
     const menuNodeData = {
@@ -28,7 +28,7 @@ exports.sourceNodes = (
     const menuNode = {
       ...menuNodeData,
       internal: {
-        type: "MenuItem",
+        type: 'MenuItem',
         contentDigest: createContentDigest(menuNodeData),
       },
     };

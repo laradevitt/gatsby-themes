@@ -4,9 +4,9 @@ Just the basics, please.
 
 ## Included
 
-- Menu component
 - Google Analytics
 - XML sitemap and robots.txt
+- Menu component
 - Image-ready
 
 For a full list of included plugins, see *package.json*.
@@ -16,7 +16,9 @@ For a full list of included plugins, see *package.json*.
 ```cli
 npm i @laradevitt/gatsby-theme-just-basics
 ```
+
 or
+
 ```cli
 yarn add @laradevitt/gatsby-theme-just-basics
 ```
@@ -76,13 +78,9 @@ module.exports = {
 
 ## Menu usage
 
-The `Menu` component outputs a hierarchical list-style menu based on the
-settings in `menuLinks`. It sets `active` class for active item and
-`active-trail` class for active trail. It doesn't do anything special beyond
-that. Use `wrapperClass` to pass classes to the wrapping `<nav>` element.
+The `Menu` component outputs a hierarchical list-style menu based on the settings in `menuLinks`. It sets `active` class for active item and `active-trail` class for active trail. It doesn't do anything special beyond that. Use `wrapperClass` to pass classes to the `<nav>` element.
 
-You can use the `Menu` component anywhere; just make sure to pass in
-`location`. It needs this info to set active item and active trail.
+You can use the `Menu` component anywhere; just make sure to pass in `location`. It needs this info to set active item and active trail.
 
 ```js
 import Menu from '@laradevitt/gatsby-theme-just-basics/src/components/Menu';
