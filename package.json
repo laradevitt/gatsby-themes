@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "npm:update": "find . -type f -name 'package.json' -not -path './.git/*' -not -path '*/node_modules/*' -execdir npx npm-check-updates --upgrade ;"
+    "npm:update": "find . -type f -name 'package.json' -not -path './.git/*' -not -path '*/node_modules/*' -execdir npx npm-check-updates --target minor --upgrade ;"
   },
   "workspaces": [
     "sites/*",

@@ -1,6 +1,6 @@
 {
   "name": "gatsby-starter-just-basics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "author": "Lara Devitt <ldevitt@othermachines.com> (@laradevitt)",
   "license": "MIT",
@@ -9,9 +9,9 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "gatsby": "^2.25.3",
-    "@laradevitt/gatsby-theme-just-basics": "^1.0.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "gatsby": "^2.32.11",
+    "@laradevitt/gatsby-theme-just-basics": "^1.0.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   }
 }
