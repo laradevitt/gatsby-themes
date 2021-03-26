@@ -1,6 +1,6 @@
 {
   "name": "@laradevitt/gatsby-theme-just-basics",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "index.js",
   "author": "Lara Devitt <ldevitt@othermachines.com>",
   "license": "MIT",
@@ -25,7 +25,6 @@
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-google-gtag": "^2.8.0",
     "gatsby-plugin-image": "^1.1.2",
-    "gatsby-plugin-layout": "^1.10.0",
     "gatsby-plugin-react-helmet": "^3.10.0",
     "gatsby-plugin-robots-txt": "^1.5.5",
     "gatsby-plugin-sharp": "^2.14.3",

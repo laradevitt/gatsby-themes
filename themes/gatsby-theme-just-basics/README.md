@@ -2,30 +2,44 @@
 
 Just the basics, please.
 
+This is *not* a design theme. It just provides some essential components on which to build a basic site.
+
+*Note: You're looking at an older version (1.x) which is compatible with Gatsby 2. For Gatsby 3 compatibility, download the latest version instead.*
+
 ## Included
 
 - Google Analytics
 - XML sitemap and robots.txt
 - Menu component
-- Image-ready
+- Image-ready\*
 
-For a full list of included plugins, see *package.json*.
+\* Includes both [gatsby-plugin-image](https://www.gatsbyjs.com/plugins/gatsby-plugin-image/) and the older [gatsby-image](https://www.gatsbyjs.com/plugins/gatsby-image/) until the former is more broadly supported.
+
+For a full list of included plugins, see the [package.json](https://github.com/laradevitt/gatsby-themes/blob/master/themes/gatsby-theme-just-basics/package.json) file.
 
 ## Install
 
-```cli
+```sh
 npm i @laradevitt/gatsby-theme-just-basics
 ```
 
 or
 
-```cli
+```sh
 yarn add @laradevitt/gatsby-theme-just-basics
 ```
 
-## Configure (example)
+## Develop
 
-*gatsby-config.js*:
+Fork the monorepo and run the starter from the workspaces root (requires [Yarn](https://yarnpkg.com/)):
+
+```sh
+yarn workspace gatsby-starter-just-basics gatsby develop
+```
+
+## Configure
+
+*gatsby-config.js (example)*
 
 ```js
 module.exports = {
