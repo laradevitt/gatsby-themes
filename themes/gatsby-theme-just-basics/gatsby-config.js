@@ -1,17 +1,13 @@
-const merge = require('deepmerge');
-const themeDefaults = require('./extra/options-default');
+const withDefaults = require('./defaults');
 
 module.exports = (themeOptions) => {
-  const { menuLinks, analytics, xmlsitemap, robotstxt } = merge(
-    themeDefaults,
-    themeOptions
-  );
-
-  // If we don't define this property we get a WebpackError if there are no
-  // options set for the plugin.
-  if (typeof analytics.trackingIds === 'undefined' || !analytics.trackingIds) {
-    analytics.trackingIds = [];
-  }
+  const options = withDefaults(themeOptions);
+  const {
+    menuLinks,
+    analytics,
+    xmlsitemap,
+    robotstxt,
+  } = options;
 
   const plugins = [
     'gatsby-plugin-react-helmet',

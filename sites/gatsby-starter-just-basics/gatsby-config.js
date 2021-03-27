@@ -47,6 +47,17 @@ module.exports = {
             parentPath: null,
           },
         ],
+        analytics: {
+          gtagConfig: {
+            anonymize_ip: true,
+          },
+        },
+        xmlsitemap: {
+          output: '/sitemap.xml',
+        },
+        robotstxt: {
+          policy: [ { userAgent: '*', disallow: ['/'], } ],
+        },
       },
     },
   ],

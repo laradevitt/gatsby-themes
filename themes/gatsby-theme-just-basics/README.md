@@ -72,10 +72,13 @@ module.exports = {
         // For more options, see docs for gatsby-plugin-google-gtag.
         analytics: {
           trackingIds: ['X-XXXXXXXXXX'],
+          gtagConfig: {
+            anonymize_ip: true,
+          },
         },
         // For more options, see docs for gatsby-plugin-sitemap.
         xmlsitemap: {
-          exclude: [],
+          exclude: ['/thank-you'],
           output: '/sitemap.xml',
         },
         // For more options, see docs for gatsby-plugin-robots-txt.
@@ -95,6 +98,8 @@ module.exports = {
 The `Menu` component outputs a hierarchical list-style menu based on the settings in `menuLinks`. It sets `active` class for active item and `active-trail` class for active trail. It doesn't do anything special beyond that. Use `wrapperClass` to pass classes to the `<nav>` element.
 
 The `activePath` property is required. You can use the `location` object, a dynamically generated path (such as in a template file), or any old path.
+
+*To do: add optional home link.*
 
 Example:
 

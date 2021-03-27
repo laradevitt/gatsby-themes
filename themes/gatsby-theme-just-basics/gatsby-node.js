@@ -1,12 +1,14 @@
-const merge = require('deepmerge');
 const _ = require('lodash');
-const themeDefaults = require('./extra/options-default');
+const withDefaults = require('./defaults');
 
 exports.sourceNodes = (
   { actions: { createNode }, createNodeId, createContentDigest },
   themeOptions
 ) => {
-  const { menuLinks } = merge(themeDefaults, themeOptions);
+  const options = withDefaults(themeOptions);
+  const {
+    menuLinks
+  } = options;
 
   if (menuLinks.length) {
     console.log(`Generating ${menuLinks.length} MenuItem nodes...`);
