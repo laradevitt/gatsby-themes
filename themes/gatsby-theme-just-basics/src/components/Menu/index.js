@@ -32,12 +32,15 @@ const Menu = ({ activePath, wrapperClass }) => (
     render={(data) => {
       const { edges } = data.allMenuItem;
       const menuTree = createDataTree(edges, activePath);
-      if (edges.length) {
+      if (edges.length > 0) {
         return (
           <nav className={wrapperClass}>
             {<MenuList activePath={activePath} items={menuTree} />}
           </nav>
         );
+      }
+      else {
+        return (null);
       }
     }}
   />

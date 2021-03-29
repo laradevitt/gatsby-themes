@@ -1,8 +1,8 @@
 {
   "name": "gatsby-starter-just-basics",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
-  "author": "Lara Devitt <ldevitt@othermachines.com> (@laradevitt)",
+  "author": "Lara Devitt <ldevitt@othermachines.com>",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
