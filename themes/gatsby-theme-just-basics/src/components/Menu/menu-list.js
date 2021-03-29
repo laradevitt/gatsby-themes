@@ -23,10 +23,10 @@ const MenuList = ({ items, activePath }) => {
           >
             {item.node.label}
           </Link>
-          {item.childNodes
-            && (
-            <MenuList activePath={activePath} items={item.childNodes} />
-          )}
+          {item.childNodes.length
+            ? <MenuList activePath={activePath} items={item.childNodes} />
+            : null
+          }
         </li>
       ))}
     </ul>

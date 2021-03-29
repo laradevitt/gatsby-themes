@@ -2,7 +2,7 @@
   "name": "gatsby-starter-just-basics",
   "version": "2.0.2",
   "main": "index.js",
-  "author": "Lara Devitt <ldevitt@othermachines.com> (@laradevitt)",
+  "author": "Lara Devitt <ldevitt@othermachines.com>",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
