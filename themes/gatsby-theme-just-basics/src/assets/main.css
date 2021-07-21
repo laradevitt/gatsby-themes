@@ -8,11 +8,11 @@
   padding: 0;
 }
 
-.menu.main nav > ul ul {
+.menu.main > ul ul {
   display: none;
 }
 
-.menu.main > nav > ul > li {
+.menu.main > ul > li {
   display: inline-block;
   padding-right: 1rem;
 }
