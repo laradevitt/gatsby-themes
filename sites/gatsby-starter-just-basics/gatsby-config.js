@@ -6,7 +6,8 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'Just the Basics (Starter Site)',
+    title: 'Just the Basics',
+    description: 'A Gatsby starter demo for Just the Basics theme.',
     siteUrl: 'https://example.com',
   },
   plugins: [

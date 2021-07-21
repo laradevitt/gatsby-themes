@@ -1,11 +1,21 @@
 import React from 'react';
 import Layout from '@laradevitt/gatsby-theme-just-basics/src/components/layout';
 import Menu from '@laradevitt/gatsby-theme-just-basics/src/components/Menu';
+import Seo from '@laradevitt/gatsby-theme-just-basics/src/components/Seo';
 
 /* eslint-disable-next-line */
 export default ({ location }) => {
   return (
     <Layout location={location}>
+      <Seo
+        title="Contact"
+        meta={[
+          {
+            name: 'og:url',
+            content: location.href,
+          },
+        ]}
+      />
       <div>
         <Menu wrapperClass="menu sub" activePath={location.pathname} />
       </div>

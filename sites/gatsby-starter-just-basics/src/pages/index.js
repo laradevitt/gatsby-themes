@@ -3,10 +3,20 @@ import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '@laradevitt/gatsby-theme-just-basics/src/components/layout';
 import Menu from '@laradevitt/gatsby-theme-just-basics/src/components/Menu';
+import Seo from '@laradevitt/gatsby-theme-just-basics/src/components/Seo';
 
 const Homepage = ({ location }) => {
   return (
     <Layout location={location}>
+      <Seo
+        title="Home"
+        meta={[
+          {
+            name: 'og:url',
+            content: location.href,
+          },
+        ]}
+      />
       <div>
         <Menu wrapperClass="menu sub" activePath={location.pathname} />
       </div>

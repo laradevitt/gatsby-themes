@@ -14,7 +14,7 @@ const useSiteMetadata = () => {
     }
   `,
   );
-  return site.siteMetadata;
+  return site;
 };
 
 export default useSiteMetadata;

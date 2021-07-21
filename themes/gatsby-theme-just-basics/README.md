@@ -12,6 +12,7 @@ This is *not* a design theme. It just provides some essential components on whic
 - XML sitemap and robots.txt
 - Menu component
 - Image-ready\*
+- An SEO component (new!)
 
 \* Includes both [gatsby-plugin-image](https://www.gatsbyjs.com/plugins/gatsby-plugin-image/) and the older [gatsby-image](https://www.gatsbyjs.com/plugins/gatsby-image/) until the former is more broadly supported.
 
@@ -45,6 +46,7 @@ yarn workspace gatsby-starter-just-basics gatsby develop
 module.exports = {
   siteMetadata: {
     title: 'Example Website',
+    description: 'An excellent website.',
     siteUrl: 'https://example.com',
   },
   plugins: [
@@ -91,6 +93,43 @@ module.exports = {
     },
   ],
 }
+```
+
+## SEO
+
+You can optionally import the SEO component with:
+
+```js
+import Seo from '@laradevitt/gatsby-theme-just-basics/src/components/Seo';
+```
+
+Usage:
+
+(All props are optional. If *title* and *description* aren't provided the values
+from *siteMetadata* will be used.)
+
+```js
+export default ({ location }) => {
+  return (
+    <Layout location={location}>
+      <Seo
+        title="About Me"
+        description="A little about me."
+        meta={[
+          {
+            name: 'og:url',
+            content: location.href,
+          },
+          {
+            name: 'og:locale',
+            content: 'en',
+          },
+        ]}
+      />
+      <h1>About Me</h1>
+    </Layout>
+  );
+};
 ```
 
 ## Menu usage

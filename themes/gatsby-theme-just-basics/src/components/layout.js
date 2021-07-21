@@ -1,24 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import useSiteMetadata from '../hooks/use-site-metadata';
 
 import Header from './header';
 import Footer from './footer';
 
+import useSiteMetadata from '../hooks/use-site-metadata';
+
 import '../assets/main.css';
 
 const Layout = ({ children, location }) => {
-  const { title, siteUrl } = useSiteMetadata();
+  const { siteMetadata } = useSiteMetadata();
   return (
     <>
       <Helmet
+        title={siteMetadata.title}
         htmlAttributes={{
           lang: 'en',
         }}
       >
-        <title>{title}</title>
-        <link rel="canonical" href={`${siteUrl}${location.pathname}`} />
+        <link rel="canonical" href={`${siteMetadata.siteUrl}${location.pathname}`} />
       </Helmet>
       <Header
         location={location}
