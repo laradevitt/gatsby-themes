@@ -2,11 +2,8 @@
  * SEO component.
  *
  * Most sites need basic meta tags for SEO so I wanted to provide a simple
- * component BUT I also don't want to reinvent the wheel. This one is a copy of
- * the component in Gatsby's official default starter, with <title> and
- * <html lang> handling stripped out for backwards compatibility since these are
- * already handled in the layout component. In version 3.x I will bring them all
- * together here.
+ * component BUT I also don't want to reinvent the wheel. This one is
+ * essentially a copy of the component in Gatsby's official default starter.
  *
  * See: https://github.com/gatsbyjs/gatsby-starter-default/blob/master/src/components/seo.js
  */
@@ -17,7 +14,7 @@ import { Helmet } from 'react-helmet';
 
 import useSiteMetadata from '../hooks/use-site-metadata';
 
-function Seo({ title, description, meta }) {
+function Seo({ title, description, meta, lang }) {
   const { siteMetadata } = useSiteMetadata();
 
   const metaDescription = description || siteMetadata.description;
@@ -25,6 +22,11 @@ function Seo({ title, description, meta }) {
 
   return (
     <Helmet
+      htmlAttributes={{
+        lang,
+      }}
+      title={title}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
           name: 'description',
@@ -59,20 +61,21 @@ function Seo({ title, description, meta }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    >
-    </Helmet>
+    />
   )
 }
 
 Seo.defaultProps = {
-  meta: [],
   description: '',
+  lang: 'en',
+  meta: [],
 };
 
 Seo.propTypes = {
-  title: PropTypes.string.isRequired,
   description: PropTypes.string,
+  lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string.isRequired,
 };
 
 export default Seo;

@@ -9,6 +9,7 @@ module.exports = {
     title: 'Just the Basics',
     description: 'A Gatsby starter demo for Just the Basics theme.',
     siteUrl: 'https://example.com',
+    author: '@twitteruser',
   },
   plugins: [
     {
@@ -58,6 +59,9 @@ module.exports = {
         },
         robotstxt: {
           policy: [ { userAgent: '*', disallow: ['/'], } ],
+        },
+        canonicalurls: {
+          siteUrl: 'https://example.com',
         },
       },
     },

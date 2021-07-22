@@ -7,6 +7,7 @@ module.exports = (themeOptions) => {
     analytics,
     xmlsitemap,
     robotstxt,
+    canonicalurls,
   } = options;
 
   const plugins = [
@@ -34,6 +35,15 @@ module.exports = (themeOptions) => {
       options: robotstxt,
     },
   ];
+
+  if (canonicalurls.siteUrl !== undefined) {
+    plugins.push(
+      {
+        resolve: `gatsby-plugin-canonical-urls`,
+        options: canonicalurls,
+      },
+    );
+  }
 
   return {
     siteMetadata: { menuLinks: menuLinks },

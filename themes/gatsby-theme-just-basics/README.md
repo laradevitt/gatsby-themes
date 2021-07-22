@@ -10,9 +10,10 @@ This is *not* a design theme. It just provides some essential components on whic
 
 - Google Analytics
 - XML sitemap and robots.txt
+- Canonical Urls (new!)
 - Menu component
-- Image-ready\*
 - An SEO component (new!)
+- Image-ready\*
 
 \* Includes both [gatsby-plugin-image](https://www.gatsbyjs.com/plugins/gatsby-plugin-image/) and the older [gatsby-image](https://www.gatsbyjs.com/plugins/gatsby-image/) until the former is more broadly supported.
 
@@ -40,19 +41,43 @@ yarn workspace gatsby-starter-just-basics gatsby develop
 
 ## Configure
 
-*gatsby-config.js (example)*
+### Minimal
 
+At the very least, you need:
+
+*gatsby-config.js*
+```js
+module.exports = {
+  // This theme requires these siteMetadata fields be set, but only siteUrl
+  // requires a value; the others can be left blank.
+  siteMetadata: {
+    title: '',
+    description: '',
+    siteUrl: 'https://example.com',
+    author: '',
+  },
+  plugins: [
+    '@laradevitt/gatsby-theme-just-basics',
+  ],
+}
+```
+
+### Expanded
+
+*gatsby-config.js*
 ```js
 module.exports = {
   siteMetadata: {
     title: 'Example Website',
     description: 'An excellent website.',
     siteUrl: 'https://example.com',
+    author: '@twitteruser',
   },
   plugins: [
     {
-      resolve: `gatsby-theme-just-basics`,
+      resolve: '@laradevitt/gatsby-theme-just-basics',
       options: {
+        // Links for the Menu component.
         menuLinks: [
           {
             menuName: 'main',
@@ -71,6 +96,7 @@ module.exports = {
             parentPath: '/about',
           },
         ],
+        // Google Analytics.
         // For more options, see docs for gatsby-plugin-google-gtag.
         analytics: {
           trackingIds: ['X-XXXXXXXXXX'],
@@ -78,16 +104,23 @@ module.exports = {
             anonymize_ip: true,
           },
         },
+        // XML sitemap.
         // For more options, see docs for gatsby-plugin-sitemap.
         xmlsitemap: {
           exclude: ['/thank-you'],
           output: '/sitemap.xml',
         },
+        // robots.txt configuration.
         // For more options, see docs for gatsby-plugin-robots-txt.
         robotstxt: {
           policy: [
             { userAgent: '*', disallow: ['/'] },
           ],
+        },
+        // Canonical URLs.
+        // For more options, see docs for gatsby-plugin-canonical-urls.
+        canonicalurls: {
+          siteUrl: 'https://example.com',
         },
       },
     },
@@ -115,6 +148,7 @@ export default ({ location }) => {
       <Seo
         title="About Me"
         description="A little about me."
+        lang="se"
         meta={[
           {
             name: 'og:url',

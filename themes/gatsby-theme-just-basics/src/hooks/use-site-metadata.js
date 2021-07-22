@@ -6,9 +6,10 @@ const useSiteMetadata = () => {
     query {
       site {
         siteMetadata {
-          title
+          author
           description
           siteUrl
+          title
         }
       }
     }

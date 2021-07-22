@@ -23,10 +23,16 @@ module.exports = (themeOptions) => {
       ? themeOptions.robotstxt
       : {};
 
+  const canonicalurls =
+    themeOptions.canonicalurls != null
+      ? themeOptions.canonicalurls
+      : {};
+
   return {
     menuLinks,
     analytics,
     xmlsitemap,
     robotstxt,
+    canonicalurls,
   };
 };

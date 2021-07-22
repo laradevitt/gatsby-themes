@@ -8,7 +8,7 @@ export default ({ location }) => {
   return (
     <Layout location={location}>
       <Seo
-        title="Portfolio | Photography"
+        title="(Portfolio) Photography"
         meta={[
           {
             name: 'og:url',
