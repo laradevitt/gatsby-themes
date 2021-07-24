@@ -1,3 +1,7 @@
+## v2.0.5
+
+- Fix README example.
+
 ## v2.0.4
 
 - (Breaking change) Now requires `author` field to be set in `siteMetadata`. *(Can be left blank.)*
