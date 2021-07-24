@@ -133,7 +133,7 @@ module.exports = {
 You can optionally import the SEO component with:
 
 ```js
-import Seo from '@laradevitt/gatsby-theme-just-basics/src/components/Seo';
+import Seo from '@laradevitt/gatsby-theme-just-basics/src/components/seo';
 ```
 
 Usage:
@@ -151,11 +151,11 @@ export default ({ location }) => {
         lang="se"
         meta={[
           {
-            name: 'og:url',
+            property: 'og:url',
             content: location.href,
           },
           {
-            name: 'og:locale',
+            property: 'og:locale',
             content: 'en',
           },
         ]}
