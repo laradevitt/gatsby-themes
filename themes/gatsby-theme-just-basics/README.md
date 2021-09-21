@@ -10,9 +10,10 @@ This is *not* a design theme. It just provides some essential components on whic
 
 - Google Analytics
 - XML sitemap and robots.txt
-- Canonical Urls (new!)
+- Canonical Urls
 - Menu component
-- An SEO component (new!)
+- An SEO component
+- [Skip navigation](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-reach-skip-nav) for keyboard accessibility (new!)
 - Image-ready\*
 
 \* Includes both [gatsby-plugin-image](https://www.gatsbyjs.com/plugins/gatsby-plugin-image/) and the older [gatsby-image](https://www.gatsbyjs.com/plugins/gatsby-image/) until the former is more broadly supported.
