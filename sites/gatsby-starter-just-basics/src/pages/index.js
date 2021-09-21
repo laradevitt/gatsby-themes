@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '@laradevitt/gatsby-theme-just-basics/src/components/layout';
 import Menu from '@laradevitt/gatsby-theme-just-basics/src/components/Menu';
-import Seo from '@laradevitt/gatsby-theme-just-basics/src/components/Seo';
+import Seo from '@laradevitt/gatsby-theme-just-basics/src/components/seo';
 
 const Homepage = ({ location }) => {
   return (
