@@ -16,18 +16,18 @@
     "clean": "gatsby clean"
   },
   "peerDependencies": {
-    "gatsby": "^3.14.5",
+    "gatsby": "^3.14.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@reach/skip-nav": "^0.16.0",
+    "@reach/skip-nav": "^0.17.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-canonical-urls": "^3.14.0",
     "gatsby-plugin-google-gtag": "^3.14.0",
     "gatsby-plugin-image": "^1.14.2",
     "gatsby-plugin-react-helmet": "^4.14.0",
-    "gatsby-plugin-robots-txt": "^1.6.14",
+    "gatsby-plugin-robots-txt": "^1.7.1",
     "gatsby-plugin-sharp": "^3.14.3",
     "gatsby-plugin-sitemap": "^3.3.0",
     "gatsby-source-filesystem": "^3.14.0",
