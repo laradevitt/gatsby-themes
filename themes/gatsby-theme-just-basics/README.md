@@ -4,14 +4,13 @@ Just the basics, please.
 
 This is *not* a design theme. It just provides some essential components on which to build a basic site.
 
-*Note: Latest version (2.x) requires Gatsby 3.*
+*Note: The Menu component was removed in 3.x branch.*
 
 ## Included
 
 - Google Analytics
 - XML sitemap and robots.txt
 - Canonical Urls
-- Menu component
 - An SEO component
 - [Skip navigation](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-reach-skip-nav) for keyboard accessibility (new!)
 - Image-ready\*
@@ -78,25 +77,6 @@ module.exports = {
     {
       resolve: '@laradevitt/gatsby-theme-just-basics',
       options: {
-        // Links for the Menu component.
-        menuLinks: [
-          {
-            menuName: 'main',
-            path: '/about',
-            label: 'Top Level Page',
-            level: '0',
-            weight: '1',
-            parentPath: null,
-          },
-          {
-            menuName: 'main',
-            path: '/about/portfolio',
-            label: 'Portfolio',
-            level: '1',
-            weight: '1',
-            parentPath: '/about',
-          },
-        ],
         // Google Analytics.
         // For more options, see docs for gatsby-plugin-google-gtag.
         analytics: {
@@ -166,38 +146,3 @@ export default ({ location }) => {
   );
 };
 ```
-
-## Menu usage
-
-The `Menu` component outputs a hierarchical list-style menu based on the settings in `menuLinks`. It sets `active` class for active item and `active-trail` class for active trail. It doesn't do anything special beyond that. Use `wrapperClass` to pass classes to the `<nav>` element.
-
-The `activePath` property is required. You can use the `location` object, a dynamically generated path (such as in a template file), or any old path.
-
-*To do: add optional home link.*
-
-Example:
-
-```js
-import Menu from '@laradevitt/gatsby-theme-just-basics/src/components/Menu';
-
-export default ({ location }) => {
-  return (
-    <Layout location={location}>
-      <Menu
-        wrapperClass="menu main"
-        activePath={location.pathname}
-      />
-    </Layout>
-  );
-};
-```
-
-Example using a dynamically generated path:
-
-```js
-<Menu
-  wrapperClass="menu breadcrumb"
-  activePath={`/shop/${product.handle}`}
-/>
-```
-

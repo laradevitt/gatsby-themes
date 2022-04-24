@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '@laradevitt/gatsby-theme-just-basics/src/components/layout';
-import Menu from '@laradevitt/gatsby-theme-just-basics/src/components/Menu';
 import Seo from '@laradevitt/gatsby-theme-just-basics/src/components/seo';
+import Menu from '../../components/menu';
 
 /* eslint-disable-next-line */
 export default ({ location }) => {
@@ -17,10 +17,10 @@ export default ({ location }) => {
         ]}
       />
       <div>
-        <Menu wrapperClass="menu sub" activePath={location.pathname} />
+        <Menu type="sub" />
       </div>
       <div>
-        <Menu wrapperClass="menu breadcrumb" activePath={location.pathname} />
+        <Menu type="breadcrumb" />
         <h1>Contact Me</h1>
         <p>
           Curabitur nec risus at nulla blandit maximus.

@@ -55,14 +55,16 @@ body {
 
 /* Minimal submenu styles: show active menu. */
 
-.menu.sub > ul li,
-.menu.sub > ul > li > a {
+.menu.sub > ul a {
   display: none;
 }
 
-.menu.sub > ul li.active-menu,
-.menu.sub > ul li.active-menu li {
+.menu.sub > ul a.active + ul a {
   display: block;
+}
+
+.menu.sub > ul ul ul {
+  margin-left: .5rem;
 }
 
 /* Minimal breadcrumb styles: show active trail. */

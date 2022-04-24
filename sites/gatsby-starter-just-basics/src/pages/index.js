@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '@laradevitt/gatsby-theme-just-basics/src/components/layout';
-import Menu from '@laradevitt/gatsby-theme-just-basics/src/components/Menu';
 import Seo from '@laradevitt/gatsby-theme-just-basics/src/components/seo';
+import Menu from '../components/menu';
 
 const Homepage = ({ location }) => {
   return (
@@ -18,10 +18,10 @@ const Homepage = ({ location }) => {
         ]}
       />
       <div>
-        <Menu wrapperClass="menu sub" activePath={location.pathname} />
+        <Menu type="sub" />
       </div>
       <div>
-        <Menu wrapperClass="menu breadcrumb" activePath={location.pathname} />
+        <Menu type="breadcrumb" />
         <h1>Welcome</h1>
         <StaticImage
           src="../images/timo-volz-ZlFKIG6dApg-unsplash.jpg"
