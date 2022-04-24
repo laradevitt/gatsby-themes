@@ -4,9 +4,11 @@ module.exports = (themeOptions) => {
   const options = withDefaults(themeOptions);
   const {
     analytics,
-    xmlsitemap,
-    robotstxt,
     canonicalurls,
+    preact,
+    preconnect,
+    robotstxt,
+    xmlsitemap,
   } = options;
 
   const plugins = [
@@ -29,6 +31,10 @@ module.exports = (themeOptions) => {
       options: xmlsitemap,
     },
     {
+      resolve: 'gatsby-plugin-preconnect',
+      options: preconnect,
+    },
+    {
       resolve: 'gatsby-plugin-robots-txt',
       options: robotstxt,
     },
@@ -43,8 +49,13 @@ module.exports = (themeOptions) => {
     );
   }
 
+  if (preact) {
+    plugins.push('gatsby-plugin-preact');
+  }
+
   return {
     siteMetadata: {},
+    trailingSlash: 'always',
     plugins,
   };
 };

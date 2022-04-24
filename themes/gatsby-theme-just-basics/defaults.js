@@ -12,25 +12,40 @@ module.exports = (themeOptions) => {
     analytics.trackingIds = [];
   }
 
-  const xmlsitemap =
-    themeOptions.xmlsitemap != null
-      ? themeOptions.xmlsitemap
+  const canonicalurls =
+    themeOptions.canonicalurls != null
+      ? themeOptions.canonicalurls
       : {};
+
+  // Enable gatsby-plugin-preact by default.
+  const preact = false;
+
+  const preconnect =
+    themeOptions.preconnect != null
+      ? themeOptions.preconnect
+      : {};
+
+  // If we don't define this property we get a WebpackError.
+  if (preconnect.domains == null) {
+    preconnect.domains = [];
+  }
 
   const robotstxt =
     themeOptions.robotstxt != null
       ? themeOptions.robotstxt
       : {};
 
-  const canonicalurls =
-    themeOptions.canonicalurls != null
-      ? themeOptions.canonicalurls
+  const xmlsitemap =
+    themeOptions.xmlsitemap != null
+      ? themeOptions.xmlsitemap
       : {};
 
   return {
     analytics,
-    xmlsitemap,
-    robotstxt,
     canonicalurls,
+    preact,
+    preconnect,
+    robotstxt,
+    xmlsitemap,
   };
 };

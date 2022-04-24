@@ -11,11 +11,11 @@ This is *not* a design theme. It just provides some essential components on whic
 - Google Analytics
 - XML sitemap and robots.txt
 - Canonical Urls
+- [Preconnect to required origins](https://web.dev/uses-rel-preconnect/)
 - An SEO component
-- [Skip navigation](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-reach-skip-nav) for keyboard accessibility (new!)
-- Image-ready\*
-
-\* Includes both [gatsby-plugin-image](https://www.gatsbyjs.com/plugins/gatsby-plugin-image/) and the older [gatsby-image](https://www.gatsbyjs.com/plugins/gatsby-image/) until the former is more broadly supported.
+- [Skip navigation](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-reach-skip-nav) for keyboard accessibility
+- Replaces React with [Preact](https://preactjs.com/) (can be disabled)
+- Image-ready
 
 For a full list of included plugins, see the [package.json](https://github.com/laradevitt/gatsby-themes/blob/master/themes/gatsby-theme-just-basics/package.json) file.
 
@@ -85,11 +85,18 @@ module.exports = {
             anonymize_ip: true,
           },
         },
-        // XML sitemap.
-        // For more options, see docs for gatsby-plugin-sitemap.
-        xmlsitemap: {
-          exclude: ['/thank-you'],
-          output: '/sitemap.xml',
+        // Canonical URLs.
+        // For more options, see docs for gatsby-plugin-canonical-urls.
+        canonicalurls: {
+          siteUrl: 'https://example.com',
+        },
+        // Preact.
+        // Enabled by default. If you need to disable it, set it to false.
+        preact: true,
+        // Preconnect.
+        // For more options, see docs for gatsby-plugin-preconnect.
+        preconnect: {
+          domains: ['https://foo.com', 'https://bar.com'],
         },
         // robots.txt configuration.
         // For more options, see docs for gatsby-plugin-robots-txt.
@@ -98,10 +105,11 @@ module.exports = {
             { userAgent: '*', disallow: ['/'] },
           ],
         },
-        // Canonical URLs.
-        // For more options, see docs for gatsby-plugin-canonical-urls.
-        canonicalurls: {
-          siteUrl: 'https://example.com',
+        // XML sitemap.
+        // For more options, see docs for gatsby-plugin-sitemap.
+        xmlsitemap: {
+          exclude: ['/thank-you'],
+          output: '/sitemap.xml',
         },
       },
     },
