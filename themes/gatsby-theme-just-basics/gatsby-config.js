@@ -3,7 +3,6 @@ const withDefaults = require('./defaults');
 module.exports = (themeOptions) => {
   const options = withDefaults(themeOptions);
   const {
-    menuLinks,
     analytics,
     xmlsitemap,
     robotstxt,
@@ -12,7 +11,6 @@ module.exports = (themeOptions) => {
 
   const plugins = [
     'gatsby-plugin-react-helmet',
-    'gatsby-image', // Will be deprecated!
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -46,7 +44,7 @@ module.exports = (themeOptions) => {
   }
 
   return {
-    siteMetadata: { menuLinks: menuLinks },
+    siteMetadata: {},
     plugins,
   };
 };
