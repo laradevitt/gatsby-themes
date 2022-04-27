@@ -24,6 +24,7 @@ module.exports = {
           output: '/sitemap.xml',
         },
         robotstxt: {
+          sitemap: 'https://example.com/sitemap.xml',
           policy: [ { userAgent: '*', disallow: ['/'], } ],
         },
         canonicalurls: {

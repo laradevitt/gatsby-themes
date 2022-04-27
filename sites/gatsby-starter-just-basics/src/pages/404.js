@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Layout from '@laradevitt/gatsby-theme-just-basics/src/components/layout';
 import Menu from '../components/menu';
 
-const Footer = ({ location }) => {
+const PageNotFound = ({ location }) => {
   return (
     <Layout location={location}>
       <div>
@@ -20,9 +20,9 @@ const Footer = ({ location }) => {
   );
 };
 
-Footer.propTypes = {
+PageNotFound.propTypes = {
   location: PropTypes.object.isRequired,
 };
 
-export default Footer;
+export default PageNotFound;
 

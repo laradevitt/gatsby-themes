@@ -78,38 +78,35 @@ module.exports = {
       resolve: '@laradevitt/gatsby-theme-just-basics',
       options: {
         // Google Analytics.
-        // For more options, see docs for gatsby-plugin-google-gtag.
+        // Disabled by default. For more options, see docs for gatsby-plugin-google-gtag.
         analytics: {
-          trackingIds: ['X-XXXXXXXXXX'],
+          trackingIds: ['X-XXXXXXXXXX'], // required property
           gtagConfig: {
             anonymize_ip: true,
           },
         },
         // Canonical URLs.
-        // For more options, see docs for gatsby-plugin-canonical-urls.
+        // Disabled by default. For more options, see docs for gatsby-plugin-canonical-urls.
         canonicalurls: {
-          siteUrl: 'https://example.com',
+          siteUrl: 'https://example.com', // required property
         },
         // Preact.
-        // Enabled by default. If you need to disable it, set it to false.
+        // Default settings. If you need to disable it, set it to false.
         preact: true,
         // Preconnect.
-        // For more options, see docs for gatsby-plugin-preconnect.
+        // Disabled by default. For more options, see docs for gatsby-plugin-preconnect.
         preconnect: {
-          domains: ['https://foo.com', 'https://bar.com'],
+          domains: ['https://foo.com', 'https://bar.com'], // required property
         },
         // robots.txt configuration.
-        // For more options, see docs for gatsby-plugin-robots-txt.
+        // Disabled by default. For more options, see docs for gatsby-plugin-robots-txt.
         robotstxt: {
-          policy: [
-            { userAgent: '*', disallow: ['/'] },
-          ],
+          policy: [{ userAgent: '*', disallow: ['/'] }],
         },
         // XML sitemap.
-        // For more options, see docs for gatsby-plugin-sitemap.
+        // Disabled by default. For more options, see docs for gatsby-plugin-sitemap.
         xmlsitemap: {
-          exclude: ['/thank-you'],
-          output: '/sitemap.xml',
+          output: '/sitemap/sitemap-index.xml',
         },
       },
     },
