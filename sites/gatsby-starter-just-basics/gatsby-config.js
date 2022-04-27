@@ -21,10 +21,10 @@ module.exports = {
           },
         },
         xmlsitemap: {
-          output: '/sitemap.xml',
+          output: '/',
         },
         robotstxt: {
-          sitemap: 'https://example.com/sitemap.xml',
+          sitemap: 'https://example.com/sitemap-index.xml',
           policy: [ { userAgent: '*', disallow: ['/'], } ],
         },
         canonicalurls: {

@@ -101,12 +101,13 @@ module.exports = {
         // robots.txt configuration.
         // Disabled by default. For more options, see docs for gatsby-plugin-robots-txt.
         robotstxt: {
-          policy: [{ userAgent: '*', disallow: ['/'] }],
+          sitemap: 'https://example.com/sitemap-index.xml',
+          policy: [{ userAgent: '*', allow: ['/'] }],
         },
         // XML sitemap.
         // Disabled by default. For more options, see docs for gatsby-plugin-sitemap.
         xmlsitemap: {
-          output: '/sitemap/sitemap-index.xml',
+          output: '/',
         },
       },
     },
