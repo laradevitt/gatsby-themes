@@ -91,7 +91,7 @@ module.exports = {
           siteUrl: 'https://example.com', // required property
         },
         // Preact.
-        // Default settings. If you need to disable it, set it to false.
+        // Disabled by default. If you need to enable it, set it to true.
         preact: true,
         // Preconnect.
         // Disabled by default. For more options, see docs for gatsby-plugin-preconnect.

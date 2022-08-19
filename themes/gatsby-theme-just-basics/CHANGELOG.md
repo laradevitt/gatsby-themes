@@ -1,3 +1,22 @@
+## v3.0.3
+
+- README correction.
+
+## v3.0.2
+
+- Removed deprecated node-sass package.
+
+## v3.0.1
+
+- Clarify configuration options in README.
+
+## v3.0.0
+
+- Compatible with Gatsby 4.
+- Added [Preconnect to required origins](https://web.dev/uses-rel-preconnect/).
+- Replaced React with [Preact](https://preactjs.com/) (can be disabled).
+- Removed Menu component.
+
 ## v2.0.8
 
 - Updated peer dependencies.
