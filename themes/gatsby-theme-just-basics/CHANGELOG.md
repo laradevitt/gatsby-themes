@@ -1,3 +1,7 @@
+## v3.0.4
+
+- Fixed can't override default `preact` option.
+
 ## v3.0.3
 
 - README correction.

@@ -17,8 +17,11 @@ module.exports = (themeOptions) => {
       ? themeOptions.canonicalurls
       : {};
 
-  // Enable gatsby-plugin-preact by default.
-  const preact = false;
+  // Disable gatsby-plugin-preact by default.
+  const preact =
+    themeOptions.preact != null
+      ? themeOptions.preact
+      : false;
 
   const preconnect =
     themeOptions.preconnect != null
