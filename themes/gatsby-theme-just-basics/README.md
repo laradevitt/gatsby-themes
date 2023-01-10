@@ -4,7 +4,11 @@ Just the basics, please.
 
 This is *not* a design theme. It just provides some essential components on which to build a basic site.
 
-*Note: gatsby-plugin-preact was removed in 4.x branch due to compatibility issue with React 18. [See this issue](https://github.com/gatsbyjs/gatsby/issues/35500).*
+## Notes ##
+
+- *react-helmet* was replaced with [Gatsby Head API](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/) in 5.x branch.
+
+- *gatsby-plugin-preact* was removed in 4.x branch due to React 18 incompatibility ([Github issue](https://github.com/gatsbyjs/gatsby/issues/35500)).
 
 ## Included
 
@@ -125,26 +129,44 @@ Usage:
 from *siteMetadata* will be used.)
 
 ```js
-export default ({ location }) => {
+export const Head = ({ location }) => (
+  <Seo
+    title="Contact"
+    path={location.pathname}
+  />
+);
+
+const Page = ({ location }) => {
   return (
     <Layout location={location}>
-      <Seo
-        title="About Me"
-        description="A little about me."
-        lang="se"
-        meta={[
-          {
-            property: 'og:url',
-            content: location.href,
-          },
-          {
-            property: 'og:locale',
-            content: 'en',
-          },
-        ]}
-      />
-      <h1>About Me</h1>
+      <div>
+        <Menu type="sub" />
+      </div>
+      <div>
+        <Menu type="breadcrumb" />
+        <h1>Contact Me</h1>
+        <p>
+          Curabitur nec risus at nulla blandit maximus.
+        </p>
+      </div>
     </Layout>
   );
 };
+
+export default Page;
 ```
+
+Optionally pass in your own meta tags:
+
+```js
+export const Head = ({ location }) => (
+  <Seo
+    title="Contact"
+    path={location.pathname}
+  >
+    <meta property="og:locale" content="en" />
+  </Seo>
+);
+```
+
+

@@ -1,3 +1,7 @@
+## v5.0.0
+
+- Replaced react-helmet with Gatsby Head API.
+
 ## v4.0.2
 
 - Fixed version in CHANGELOG.
