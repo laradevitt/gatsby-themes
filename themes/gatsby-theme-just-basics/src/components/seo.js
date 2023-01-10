@@ -10,72 +10,56 @@
 
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import useSiteMetadata from '../hooks/use-site-metadata';
+function Seo({ description, title, path, children }) {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            author
+            siteUrl
+          }
+        }
+      }
+    `
+  );
 
-function Seo({ title, description, meta, lang }) {
-  const { siteMetadata } = useSiteMetadata();
-
-  const metaDescription = description || siteMetadata.description;
-  const defaultTitle = siteMetadata?.title;
+  const metaDescription = description || site.siteMetadata.description;
+  const defaultTitle = site.siteMetadata?.title;
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
-      meta={[
-        {
-          name: 'description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:title',
-          content: title,
-        },
-        {
-          property: 'og:description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:type',
-          content: 'website',
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary',
-        },
-        {
-          name: 'twitter:creator',
-          content: siteMetadata?.author || '',
-        },
-        {
-          name: 'twitter:title',
-          content: title,
-        },
-        {
-          name: 'twitter:description',
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
-  )
+    <>
+      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
+      <meta name="description" content={metaDescription} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:creator" content={site.siteMetadata?.author || ''} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={metaDescription} />
+      {site.siteMetadata.siteUrl && path
+        && (
+          <>
+            <meta property="og:url" content={`${site.siteMetadata.siteUrl}${path}`} />
+            <meta property="twitter:url" content={`${site.siteMetadata.siteUrl}${path}`} />
+          </>
+        )
+      }
+      {children}
+    </>
+  );
 }
-
-Seo.defaultProps = {
-  description: '',
-  lang: 'en',
-  meta: [],
-};
 
 Seo.propTypes = {
   description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  path: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default Seo;

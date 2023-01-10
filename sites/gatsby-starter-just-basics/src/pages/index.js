@@ -5,18 +5,18 @@ import Layout from '@laradevitt/gatsby-theme-just-basics/src/components/layout';
 import Seo from '@laradevitt/gatsby-theme-just-basics/src/components/seo';
 import Menu from '../components/menu';
 
+/* eslint-disable react/prop-types */
+export const Head = ({ location }) => (
+  <Seo
+    title="Home"
+    path={location.pathname}
+  />
+);
+/* eslint-enable react/prop-types */
+
 const Homepage = ({ location }) => {
   return (
     <Layout location={location}>
-      <Seo
-        title="Home"
-        meta={[
-          {
-            name: 'og:url',
-            content: location.href,
-          },
-        ]}
-      />
       <div>
         <Menu type="sub" />
       </div>
@@ -41,7 +41,7 @@ const Homepage = ({ location }) => {
 };
 
 Homepage.propTypes = {
-  location: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 };
 
 export default Homepage;

@@ -11,7 +11,6 @@ module.exports = (themeOptions) => {
   } = options;
 
   const plugins = [
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
