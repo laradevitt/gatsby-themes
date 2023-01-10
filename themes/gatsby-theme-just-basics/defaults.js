@@ -17,12 +17,6 @@ module.exports = (themeOptions) => {
       ? themeOptions.canonicalurls
       : {};
 
-  // Disable gatsby-plugin-preact by default.
-  const preact =
-    themeOptions.preact != null
-      ? themeOptions.preact
-      : false;
-
   const preconnect =
     themeOptions.preconnect != null
       ? themeOptions.preconnect
@@ -46,7 +40,6 @@ module.exports = (themeOptions) => {
   return {
     analytics,
     canonicalurls,
-    preact,
     preconnect,
     robotstxt,
     xmlsitemap,

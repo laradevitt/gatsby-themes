@@ -5,7 +5,6 @@ module.exports = (themeOptions) => {
   const {
     analytics,
     canonicalurls,
-    preact,
     preconnect,
     robotstxt,
     xmlsitemap,
@@ -47,10 +46,6 @@ module.exports = (themeOptions) => {
         options: canonicalurls,
       },
     );
-  }
-
-  if (preact) {
-    plugins.push('gatsby-plugin-preact');
   }
 
   return {

@@ -4,7 +4,7 @@ Just the basics, please.
 
 This is *not* a design theme. It just provides some essential components on which to build a basic site.
 
-*Note: The Menu component was removed in 3.x branch.*
+*Note: gatsby-plugin-preact was removed in 4.x branch due to compatibility issue with React 18. [See this issue](https://github.com/gatsbyjs/gatsby/issues/35500).*
 
 ## Included
 
@@ -14,12 +14,9 @@ This is *not* a design theme. It just provides some essential components on whic
 - [Preconnect to required origins](https://web.dev/uses-rel-preconnect/)
 - An SEO component
 - [Skip navigation](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-reach-skip-nav) for keyboard accessibility
-- Optionally replaces React with [Preact](https://preactjs.com/)\*
 - Image-ready
 
 For a full list of included plugins, see the [package.json](https://github.com/laradevitt/gatsby-themes/blob/master/themes/gatsby-theme-just-basics/package.json) file.
-
-\* **Important note:** Preact is not currently compatible with React 18, and this is likely to result in errors with Gatsby 4+. The only current workaround is to pin your React version to 17 or below. [See this issue](https://github.com/gatsbyjs/gatsby/issues/35500).
 
 ## Install
 
@@ -92,9 +89,6 @@ module.exports = {
         canonicalurls: {
           siteUrl: 'https://example.com', // required property
         },
-        // Preact.
-        // Disabled by default. If you need to enable it, set it to true.
-        preact: true,
         // Preconnect.
         // Disabled by default. For more options, see docs for gatsby-plugin-preconnect.
         preconnect: {
