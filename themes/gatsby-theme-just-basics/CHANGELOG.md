@@ -1,4 +1,12 @@
-## v5.0.0
+## v4.0.2
+
+- Fixed version in CHANGELOG.
+
+## v4.0.1
+
+- Fixed version in starter dependency.
+
+## v4.0.0
 
 - Compatible with Gatsby 5.
 - Removed gatsby-plugin-preact and dependencies.
