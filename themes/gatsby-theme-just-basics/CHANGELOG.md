@@ -1,3 +1,9 @@
+## v5.0.0
+
+- Compatible with Gatsby 5.
+- Removed gatsby-plugin-preact and dependencies.
+- Removed dependency on sass and lodash.
+
 ## v3.0.4
 
 - Fixed can't override default `preact` option.
