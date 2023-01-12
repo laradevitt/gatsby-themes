@@ -42,7 +42,7 @@ function Seo({ description, title, path, children }) {
       <meta name="twitter:creator" content={site.siteMetadata?.author || ''} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
-      {site.siteMetadata.siteUrl && path
+      {site.siteMetadata.siteUrl
         && (
           <>
             <meta property="og:url" content={`${site.siteMetadata.siteUrl}${path}`} />
@@ -60,6 +60,10 @@ Seo.propTypes = {
   title: PropTypes.string,
   path: PropTypes.string,
   children: PropTypes.node,
+};
+
+Seo.defaultProps = {
+  path: '',
 };
 
 export default Seo;
