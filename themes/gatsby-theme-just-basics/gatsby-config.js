@@ -21,10 +21,6 @@ module.exports = (themeOptions) => {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
-      resolve: 'gatsby-plugin-google-gtag',
-      options: analytics,
-    },
-    {
       resolve: 'gatsby-plugin-sitemap',
       options: xmlsitemap,
     },
@@ -38,10 +34,19 @@ module.exports = (themeOptions) => {
     },
   ];
 
+  if (analytics.trackingIds.length > 0) {
+    plugins.push(
+      {
+        resolve: 'gatsby-plugin-google-gtag',
+        options: analytics,
+      },
+    );
+  }
+
   if (canonicalurls.siteUrl !== undefined) {
     plugins.push(
       {
-        resolve: `gatsby-plugin-canonical-urls`,
+        resolve: 'gatsby-plugin-canonical-urls',
         options: canonicalurls,
       },
     );
