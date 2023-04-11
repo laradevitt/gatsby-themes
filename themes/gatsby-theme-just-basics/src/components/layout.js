@@ -7,8 +7,8 @@ import Footer from './footer';
 
 import useSiteMetadata from '../hooks/use-site-metadata';
 
-import '../assets/main.css';
 import '@reach/skip-nav/styles.css';
+import '../assets/main.css';
 
 const Layout = ({ children, location }) => (
   <>
