@@ -21,10 +21,6 @@ module.exports = (themeOptions) => {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
-      resolve: 'gatsby-plugin-sitemap',
-      options: xmlsitemap,
-    },
-    {
       resolve: 'gatsby-plugin-preconnect',
       options: preconnect,
     },
@@ -43,11 +39,24 @@ module.exports = (themeOptions) => {
     );
   }
 
-  if (canonicalurls.siteUrl !== undefined) {
+  if (typeof canonicalurls.siteUrl !== 'undefined') {
     plugins.push(
       {
         resolve: 'gatsby-plugin-canonical-urls',
         options: canonicalurls,
+      },
+    );
+  }
+
+  if (typeof xmlsitemap.disable === 'undefined' || xmlsitemap.disable === false) {
+    // Not an official plugin property so let's remove it.
+    if (typeof xmlsitemap.disable !== 'undefined') {
+      delete xmlsitemap.disable;
+    }
+    plugins.push(
+      {
+        resolve: 'gatsby-plugin-sitemap',
+        options: xmlsitemap,
       },
     );
   }

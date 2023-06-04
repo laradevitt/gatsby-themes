@@ -15,20 +15,17 @@ module.exports = {
     {
       resolve: '@laradevitt/gatsby-theme-just-basics',
       options: {
-        analytics: {
-          gtagConfig: {
-            anonymize_ip: true,
-          },
-        },
-        xmlsitemap: {
-          output: '/',
-        },
-        robotstxt: {
-          sitemap: 'https://example.com/sitemap-index.xml',
-          policy: [ { userAgent: '*', disallow: ['/'], } ],
-        },
         canonicalurls: {
           siteUrl: 'https://example.com',
+        },
+        // Recommended settings for development:
+        xmlsitemap: {
+          disable: true,
+        },
+        robotstxt: {
+          host: null,
+          sitemap: null,
+          policy: [ { userAgent: '*', disallow: ['/'], } ],
         },
       },
     },

@@ -1,3 +1,9 @@
+## v6.0.0
+
+- Added option to disable gatsby-plugin-sitemap.
+- Tighten up check for which theme options are set (or not) when loading plugins.
+- Corrected docs where plugins are indicated as disabled by default when they are not.
+
 ## v5.0.0
 
 - Replaced react-helmet with Gatsby Head API.

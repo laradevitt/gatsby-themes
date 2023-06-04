@@ -94,18 +94,20 @@ module.exports = {
           siteUrl: 'https://example.com', // required property
         },
         // Preconnect.
-        // Disabled by default. For more options, see docs for gatsby-plugin-preconnect.
+        // Enabled by default but requires `domains` to be set. For more 
+        // options, see docs for gatsby-plugin-preconnect.
         preconnect: {
           domains: ['https://foo.com', 'https://bar.com'], // required property
         },
         // robots.txt configuration.
-        // Disabled by default. For more options, see docs for gatsby-plugin-robots-txt.
+        // Enabled by default. If `host` isn't set, uses value of `siteMetadata.siteUrl`. 
+        // For more options, see docs for gatsby-plugin-robots-txt.
         robotstxt: {
-          sitemap: 'https://example.com/sitemap-index.xml',
           policy: [{ userAgent: '*', allow: ['/'] }],
         },
         // XML sitemap.
-        // Disabled by default. For more options, see docs for gatsby-plugin-sitemap.
+        // Enabled by default. Set `disable: true` to disable. For full plugin 
+        // options, see docs for gatsby-plugin-sitemap.
         xmlsitemap: {
           output: '/',
         },
